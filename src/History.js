@@ -52,7 +52,7 @@ let History = (props) => {
     )
   });
 
-  let averagedError = Math.floor(Math.trunc(R.reduce(R.add, 0, errorList)) / errorList.length);
+  let averagedError = Math.trunc(R.reduce(R.add, 0, errorList) / errorList.length);
 
   return (
     <div>
