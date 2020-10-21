@@ -31,8 +31,8 @@ class CurrentQuestion extends Component {
         // Multiplication
         if (qtype == 0) {
             let factorMax = 100; // Max possible mult. factor
-            let randFactor1 = Math.floor(randInt1 * factorMax);
-            let randFactor2 = Math.floor(randInt2 * factorMax);
+            let randFactor1 = Math.floor((randInt1 * factorMax) + 1);
+            let randFactor2 = Math.floor((randInt2 * factorMax) + 1);
             let answer = randFactor1 * randFactor2;
             let latex = <InlineMath>
                 {randFactor1 + ' \\times ' + randFactor2}
@@ -47,8 +47,8 @@ class CurrentQuestion extends Component {
         if (qtype == 1) {
             let numMax = 100; // Max possible numerato. factor
             let denomMax = 10; // Max possible denominator factor
-            let randFactor1 = Math.floor(randInt1 * numMax);
-            let randFactor2 = Math.floor(randInt2 * denomMax);
+            let randFactor1 = Math.floor((randInt1 * numMax) + 1);
+            let randFactor2 = Math.floor((randInt2 * denomMax) + 1);
             let answer = Math.round(randFactor1 / randFactor2);
             let latex = <InlineMath>
                 {'\\frac{' + randFactor1 + '}{ ' + randFactor2 + '}'}
@@ -92,10 +92,10 @@ class CurrentQuestion extends Component {
 
         // Percentages
         if (qtype == 4) {
-            let percentFactor = Math.round(randInt1 * 20) * 5;
+            let percentFactor = Math.round((randInt1 * 19) + 1) * 5;
             let numMax = 100; // Max possible factor 2
             let randFactor = Math.floor(randInt2 * numMax);
-            let answer = Math.round((percentFactor/100) * randFactor);
+            let answer = Math.round((percentFactor / 100) * randFactor);
             let latex = <InlineMath>
                 {percentFactor + ' \\% \\ \\mathrm{of} \\ ' + randFactor}
             </InlineMath>;
