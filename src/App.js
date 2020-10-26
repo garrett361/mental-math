@@ -49,7 +49,7 @@ class App extends Component {
       </h1>
 
         <p>
-          Simple mental math practice.
+          Simple mental math practice.  All answers rounded to nearest whole number.
       </p>
 
         <h2>
