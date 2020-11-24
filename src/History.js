@@ -30,7 +30,7 @@ let History = (props) => {
   // Table Fill
   let tableFill = previousLatex.map((x, index) => {
 
-    let percentError = Math.abs(Math.trunc(100 * (previousAnswers[index] - previousGuesses[index]) / (previousAnswers[index])));
+    let percentError = Math.abs(Math.trunc(100 * (previousAnswers[index] - previousGuesses[index]) / (previousGuesses[index])));
 
     return (
       <tr key={index}>
@@ -45,7 +45,7 @@ let History = (props) => {
   // Averaged accuracy
   let errorList = previousAnswers.map((x, index) => {
 
-    let percentError = Math.abs(Math.trunc(100 * (previousAnswers[index] - previousGuesses[index]) / (previousAnswers[index])));
+    let percentError = Math.abs(Math.trunc(100 * (previousAnswers[index] - previousGuesses[index]) / (previousGuesses[index])));
 
     return (
       percentError
